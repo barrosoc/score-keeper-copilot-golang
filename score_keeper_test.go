@@ -6,13 +6,13 @@ We need software to deliver the proper data to the scoreboard for a basketball t
 They need six buttons (each team can score either 1, 2 or 3 points with a single shot).
 
 Write a class ScoreKeeper which offers following methods:
-	scoreTeamA1()
-	scoreTeamA2()
-	scoreTeamA3()
-	scoreTeamB1()
-	scoreTeamB2()
-	scoreTeamB3()
-	getScore()
+    scoreTeamA1()
+    scoreTeamA2()
+    scoreTeamA3()
+    scoreTeamB1()
+    scoreTeamB2()
+    scoreTeamB3()
+    getScore()
 
 Rules:
 The returned String always has seven characters. An example would be 000:000
@@ -22,6 +22,8 @@ package main
 
 import (
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestScoreKeeper(t *testing.T) {
@@ -30,9 +32,7 @@ func TestScoreKeeper(t *testing.T) {
 		scoreKeeper := NewScoreKeeper()
 		scoreKeeper.scoreTeamA1()
 		score := scoreKeeper.getScore()
-		if score != "001:000" {
-			t.Errorf("Expected 001:000, got %s", score)
-		}
+		assert.Equal(t, "001:000", score)
 	})
 
 	// Second test
@@ -40,9 +40,7 @@ func TestScoreKeeper(t *testing.T) {
 		scoreKeeper := NewScoreKeeper()
 		scoreKeeper.scoreTeamA2()
 		score := scoreKeeper.getScore()
-		if score != "002:000" {
-			t.Errorf("Expected 002:000, got %s", score)
-		}
+		assert.Equal(t, "002:000", score)
 	})
 
 	// Third test
@@ -50,9 +48,7 @@ func TestScoreKeeper(t *testing.T) {
 		scoreKeeper := NewScoreKeeper()
 		scoreKeeper.scoreTeamA3()
 		score := scoreKeeper.getScore()
-		if score != "003:000" {
-			t.Errorf("Expected 003:000, got %s", score)
-		}
+		assert.Equal(t, "003:000", score)
 	})
 
 	// Fourth test
@@ -60,9 +56,7 @@ func TestScoreKeeper(t *testing.T) {
 		scoreKeeper := NewScoreKeeper()
 		scoreKeeper.scoreTeamB1()
 		score := scoreKeeper.getScore()
-		if score != "000:001" {
-			t.Errorf("Expected 000:001, got %s", score)
-		}
+		assert.Equal(t, "000:001", score)
 	})
 
 	// Fifth test
@@ -70,9 +64,7 @@ func TestScoreKeeper(t *testing.T) {
 		scoreKeeper := NewScoreKeeper()
 		scoreKeeper.scoreTeamB2()
 		score := scoreKeeper.getScore()
-		if score != "000:002" {
-			t.Errorf("Expected 000:002, got %s", score)
-		}
+		assert.Equal(t, "000:002", score)
 	})
 
 	// Sixth test
@@ -80,9 +72,7 @@ func TestScoreKeeper(t *testing.T) {
 		scoreKeeper := NewScoreKeeper()
 		scoreKeeper.scoreTeamB3()
 		score := scoreKeeper.getScore()
-		if score != "000:003" {
-			t.Errorf("Expected 000:003, got %s", score)
-		}
+		assert.Equal(t, "000:003", score)
 	})
 
 	// Seventh test
@@ -91,9 +81,7 @@ func TestScoreKeeper(t *testing.T) {
 		scoreKeeper.scoreTeamA1()
 		scoreKeeper.scoreTeamB1()
 		score := scoreKeeper.getScore()
-		if score != "001:001" {
-			t.Errorf("Expected 001:001, got %s", score)
-		}
+		assert.Equal(t, "001:001", score)
 	})
 
 	// Eighth test
@@ -102,9 +90,7 @@ func TestScoreKeeper(t *testing.T) {
 		scoreKeeper.scoreTeamA2()
 		scoreKeeper.scoreTeamB2()
 		score := scoreKeeper.getScore()
-		if score != "002:002" {
-			t.Errorf("Expected 002:002, got %s", score)
-		}
+		assert.Equal(t, "002:002", score)
 	})
 
 	// Ninth test
@@ -113,9 +99,7 @@ func TestScoreKeeper(t *testing.T) {
 		scoreKeeper.scoreTeamA3()
 		scoreKeeper.scoreTeamB3()
 		score := scoreKeeper.getScore()
-		if score != "003:003" {
-			t.Errorf("Expected 003:003, got %s", score)
-		}
+		assert.Equal(t, "003:003", score)
 	})
 
 	// Tenth test
@@ -125,9 +109,7 @@ func TestScoreKeeper(t *testing.T) {
 		scoreKeeper.scoreTeamA2()
 		scoreKeeper.scoreTeamA3()
 		score := scoreKeeper.getScore()
-		if score != "006:000" {
-			t.Errorf("Expected 006:000, got %s", score)
-		}
+		assert.Equal(t, "006:000", score)
 	})
 
 	// Eleventh test
@@ -137,9 +119,7 @@ func TestScoreKeeper(t *testing.T) {
 		scoreKeeper.scoreTeamB2()
 		scoreKeeper.scoreTeamB3()
 		score := scoreKeeper.getScore()
-		if score != "000:006" {
-			t.Errorf("Expected 000:006, got %s", score)
-		}
+		assert.Equal(t, "000:006", score)
 	})
 
 }
