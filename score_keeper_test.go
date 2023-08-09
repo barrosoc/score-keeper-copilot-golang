@@ -6,7 +6,7 @@ We need software to deliver the proper data to the scoreboard for a basketball t
 They need six buttons (each team can score either 1, 2 or 3 points with a single shot).
 
 Write a class ScoreKeeper which offers following methods:
-    scoreTeamA1()
+	scoreTeamA1()
 	scoreTeamA2()
 	scoreTeamA3()
 	scoreTeamB1()
